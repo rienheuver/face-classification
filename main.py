@@ -3,7 +3,7 @@ import sys
 from PIL import Image
 from pred import *
 
-input_dir = "../faces/"
+input_dir = "./faces/"
 model_path = "face_model.pkl"
 
 with open(model_path) as f:
