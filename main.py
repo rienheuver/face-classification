@@ -26,6 +26,7 @@ for fname in tqdm(os.listdir(input_dir)):
     asian = classification[1]
     white = classification[2]
     black = classification[3]
+    # print(classification)
     if max(white, asian, black) > threshold:
         if asian > white and asian > black:
             file_ethnicities[fname] = "asian"
@@ -33,6 +34,9 @@ for fname in tqdm(os.listdir(input_dir)):
             file_ethnicities[fname] = "white"
         elif black > white and black > asian:
             file_ethnicities[fname] = "black"
+    else:
+        print("No ethnicity found")
+        print(fname)
 
     if i > 5:
         break
